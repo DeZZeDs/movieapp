@@ -1,9 +1,7 @@
 package main
 
-import (
-	"movieapp/database"
-)
+import "movieapp/server"
 
 func main() {
-	database.DB = database.ConnectorDB()
+	server.ListenAndServe()
 }
