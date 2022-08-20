@@ -1,0 +1,22 @@
+.mainSlider {
+  .mainSlider__slide {
+    position: relative;
+    .sliderInfo {
+      position: absolute;
+      top:35%;
+      left:40px;
+
+      .sliderInfo__wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .sliderInfo__tags {
+            .tag {
+              
+            }
+        }
+      }
+    }
+  }
+
+}

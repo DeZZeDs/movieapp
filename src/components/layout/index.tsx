@@ -1,10 +1,20 @@
 import React from 'react';
+import Header from "../header";
+import SideBar from "../sidebar";
+import Footer from "../footer";
 
-const Layout:React.FC = () => {
+interface IProps {
+    children: React.ReactNode
+}
+
+const Layout:React.FC<IProps> = (children:IProps) => {
     return (
-        <div>
-
-        </div>
+        <>
+            <Header/>
+            <SideBar/>
+            {children.children}
+            <Footer/>
+        </>
     );
 };
 

@@ -1,0 +1,33 @@
+@import 'variables';
+@import 'fonts';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 18px;
+  color: $white;
+  font-family: 'Roboto';
+  background-color: $backgroundColor;
+}
+
+.container {
+  max-width: 100%;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+.splide__slide > img {
+  vertical-align: bottom;
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}

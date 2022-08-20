@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import './assets/styles/critical.scss';
 import App from './App';
 
 
