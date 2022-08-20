@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"movieapp/database"
+)
 
 func main() {
-	fmt.Println("HelloWorld!")
+	database.DB = database.ConnectorDB()
 }
