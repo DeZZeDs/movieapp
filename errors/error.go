@@ -13,6 +13,7 @@ var Errors = map[int8]string{
 	4: "Error deleting database data",
 	5: "Parse JSON error",
 	6: "Validation error",
+	7: "Could not hash password",
 }
 
 type typeErrors struct {

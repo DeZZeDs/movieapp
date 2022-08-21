@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"golang.org/x/crypto/bcrypt"
 	"movieapp/database"
 	"movieapp/errors"
 	"movieapp/logger"
@@ -26,12 +27,38 @@ func RegistrationHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	hash, err := GenerateHash(user.Password)
+	if err != nil {
+		logger.Error("RegistrationHandler - Could not hash password")
+		w.WriteHeader(http.StatusInternalServerError)
+		errors.WriteErrorInResponse(w, 7, errors.Errors[7], err.Error())
+		return
+	}
+	user.Password = hash
+
 	if err := database.UserCreate(&user); err != nil {
 		logger.Error("RegistrationHandler - Error adding data to database: %s", err.Error())
 		w.WriteHeader(http.StatusInternalServerError)
 		errors.WriteErrorInResponse(w, 2, errors.Errors[2], err.Error())
 		return
 	}
-	logger.Trace("RegistrationHandler - Created new user: %s, %s, %s", user.FirstName, user.LastName, user.Email)
+	logger.Trace("RegistrationHandler - Created new user: %s, %s, %s, %s", user.FirstName, user.LastName, user.Email, user.Password)
 	w.WriteHeader(http.StatusOK)
+}
+
+func GenerateHash(password string) (string, error) {
+	saltedBytes := []byte(password)
+	hashedBytes, err := bcrypt.GenerateFromPassword(saltedBytes, bcrypt.DefaultCost)
+	if err != nil {
+		return "", err
+	}
+
+	hash := string(hashedBytes[:])
+	return hash, nil
+}
+
+func CompareHashAndPassword(hash string, password string) error {
+	incoming := []byte(password)
+	existing := []byte(hash)
+	return bcrypt.CompareHashAndPassword(existing, incoming)
 }

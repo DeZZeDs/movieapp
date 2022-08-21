@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func ListenAndServe() {
+func Start() {
 	database.DB = database.ConnectorDB()
 
 	logger.Trace("Server is listening...")
