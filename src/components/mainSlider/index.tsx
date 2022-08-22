@@ -28,23 +28,15 @@ const MainSlider:React.FC = () => {
 
     const sliderOptions = {
         rewind: true,
-        width: 1920,
         height:800,
+        width:1920,
         gap: '1 rem',
         perPage: 1,
-        breakpoints: {
-            320: {
-                height: 480,
-            },
-            576: {
-                height: 480
-            },
-            768: {
-                height:600
-            },
-            1440: {
-                height:800
-            }
+        classes: {
+            arrows: 'splide__arrows your-class-arrows',
+            arrow : 'splide__arrow your-class-arrow',
+            prev  : 'splide__arrow--prev custom-btn-prev',
+            next  : 'splide__arrow--next custom-btn-next',
         },
     }
     return (
