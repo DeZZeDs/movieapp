@@ -1,7 +1,7 @@
 package database
 
 import (
-	"movieapp/server/models"
+	"movieapp/internal/models"
 )
 
 func UserCreate(user *models.User) (err error) {

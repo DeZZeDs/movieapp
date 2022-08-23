@@ -1,7 +1,7 @@
 package models
 
 import (
-	"movieapp/errors"
+	"movieapp/internal/errors"
 	"regexp"
 )
 

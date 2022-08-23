@@ -2,7 +2,7 @@ package server
 
 import (
 	"github.com/gorilla/mux"
-	"movieapp/server/handlers"
+	"movieapp/internal/server/handlers"
 	"net/http"
 )
 

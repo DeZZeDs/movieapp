@@ -1,6 +1,8 @@
 package main
 
-import "movieapp/server"
+import (
+	"movieapp/internal/server"
+)
 
 func main() {
 	server.Start()

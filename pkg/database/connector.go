@@ -5,7 +5,7 @@ import (
 	"fmt"
 	_ "github.com/lib/pq"
 	"movieapp/config"
-	"movieapp/logger"
+	"movieapp/pkg/logger"
 )
 
 var DB *sql.DB

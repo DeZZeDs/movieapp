@@ -3,7 +3,7 @@ package config
 import (
 	"encoding/json"
 	"io/ioutil"
-	"movieapp/logger"
+	"movieapp/pkg/logger"
 )
 
 type DbConfig struct {

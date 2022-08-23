@@ -3,10 +3,10 @@ package handlers
 import (
 	"encoding/json"
 	"golang.org/x/crypto/bcrypt"
-	"movieapp/database"
-	"movieapp/errors"
-	"movieapp/logger"
-	"movieapp/server/models"
+	"movieapp/internal/errors"
+	"movieapp/internal/models"
+	"movieapp/pkg/database"
+	"movieapp/pkg/logger"
 	"net/http"
 )
 

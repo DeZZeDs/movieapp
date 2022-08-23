@@ -2,8 +2,8 @@ package server
 
 import (
 	"movieapp/config"
-	"movieapp/database"
-	"movieapp/logger"
+	"movieapp/pkg/database"
+	"movieapp/pkg/logger"
 	"net/http"
 )
 
