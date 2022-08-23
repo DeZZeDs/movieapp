@@ -12,9 +12,9 @@ var DB *sql.DB
 
 func ConnectorDB() *sql.DB {
 	path := fmt.Sprintf("user=%s password=%s dbname=%s host=%s port=%s sslmode=disable",
-		config.User, config.Password, config.DatabaseName, config.Host, config.Port)
+		config.Database.DbUser, config.Database.DbPassword, config.Database.DbName, config.Database.DbHost, config.Database.DbPort)
 
-	dbConn, err := sql.Open("postgres", path)
+	dbConn, err := sql.Open(config.Database.DriverName, path)
 	if err != nil {
 		logger.Critical("Database connection failed: %v", err.Error())
 	}
