@@ -56,9 +56,3 @@ func GenerateHash(password string) (string, error) {
 	hash := string(hashedBytes[:])
 	return hash, nil
 }
-
-func CompareHashAndPassword(hash string, password string) error {
-	incoming := []byte(password)
-	existing := []byte(hash)
-	return bcrypt.CompareHashAndPassword(existing, incoming)
-}

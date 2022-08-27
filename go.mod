@@ -9,4 +9,7 @@ require (
 	golang.org/x/crypto v0.0.0-20191011191535-87dc89f01550
 )
 
-require github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
+require (
+	github.com/dgrijalva/jwt-go/v4 v4.0.0-preview1 // indirect
+	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
+)
