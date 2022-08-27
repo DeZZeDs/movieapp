@@ -20,11 +20,11 @@ var Database DbConfig
 func SetConfig() {
 	file, err := ioutil.ReadFile("config/db_config.json")
 	if err != nil {
-		logger.Critical("SetConfig - Error ReadFile: %s\", err.Error()")
+		logger.Critical("SetConfig - Error ReadFile: %s", err.Error())
 	}
 
 	err = json.Unmarshal(file, &Database)
 	if err != nil {
-		logger.Critical("SetConfig - Error Unmarshaling file: %s\", err.Error()")
+		logger.Critical("SetConfig - Error Unmarshaling file: %s", err.Error())
 	}
 }
